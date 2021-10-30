@@ -2,12 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
-const {postReview , getAnime , getReview}  = require("../controller/review");
+const {postReview , getId , getReview}  = require("../controller/review");
 
-router.param("anime" , getAnime);
+router.param("id" , getId);
 
 router.get(
-    "/review/:anime",
+    "/review/:id",
     
     getReview
   );

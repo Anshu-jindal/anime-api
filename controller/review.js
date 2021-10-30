@@ -1,15 +1,15 @@
 const Review = require("../model/reviewSchema");
 
-exports.getAnime = (req,res,next,id)=>{
-    req.anime = id;
+exports.getId = (req,res,next,id)=>{
+    req.id = id;
     next();
 }
 
 exports.getReview = async (req,res)=>{
-    const anime = req.anime;
+    const id = req.id;
     try
     {
-       reviews= await Review.find({anime : anime});
+       reviews= await Review.find({id : id});
         if(!reviews )
         {
             return res.status(400).json({

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
   {
-    anime: {
+    id: {
       required : true,
       type: String,
       trim: true,
